@@ -7,7 +7,7 @@ const helpers = require('../helpers');
 */
 const PrivateMessage = class extends require('./ReplyableContent') {
   get _uri () {
-    return `message/messages/${this.name.slice(3)}`;
+    return `message/messages/${this.id}`;
   }
   _transform_api_response (response_obj) {
     return helpers.find_message_in_tree(this.name, response_obj[0]);
